@@ -26,4 +26,17 @@ public class MecanismoMultiplicacionPrimo extends Mecanismo
         return primo;
     }
 
+    /**
+     * Metodo que realiza la codificacion de esta maquina
+     */
+    public int codifica(int numero){
+        return getNumero() * numero;
+    }
+    
+    /**
+     * Metodo que realiza la decodificacion de esta maquina
+     */
+    public int decodifica(int numero){
+        return numero / getNumero();
+    }
 }

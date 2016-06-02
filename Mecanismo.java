@@ -21,4 +21,14 @@ public abstract class Mecanismo
      * Metodo abstracto
      */
     public abstract int getNumero();
+    
+    /**
+     * Meotdo abstracto
+     */
+    public abstract int codifica(int numero);
+    
+    /**
+     * Meotdo abstracto
+     */
+    public abstract int decodifica(int numero);
 }

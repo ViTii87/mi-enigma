@@ -25,4 +25,48 @@ public class MecanismoOffset extends Mecanismo
     public int getNumero(){
         return numero;
     }
+    
+    /**
+     * Metodo que realiza la codificacion de esta maquina
+     */
+    public int codifica(int numero){
+        int resultado = -1;
+        int mult = 0;
+        int aux = 0;
+        int aux2 = getNumero();
+        resultado = 0;
+        while(numero > 10){
+            aux = numero % 10;
+            aux += aux2;
+            if(aux >= 10)
+                aux = aux % 10;
+            resultado += aux*(Math.pow(10,mult));
+            numero = numero / 10;
+            mult ++;
+        }
+        resultado += numero*(Math.pow(10,mult));
+        return resultado;
+    }
+
+    /**
+     * 
+     */
+    public int decodifica(int numero){
+        int resultado = -1;
+        int mult = 0;
+        int aux = 0;
+        int aux2 = getNumero();
+        resultado = 0;
+        while(numero > 10){
+            aux = (numero % 10) + 10;
+            aux -= aux2;
+            if(aux >= 10)
+                aux = aux % 10;
+            resultado += aux*(Math.pow(10,mult));
+            numero = numero / 10;
+            mult ++;
+        }
+        resultado += numero*(Math.pow(10,mult));
+        return resultado;
+    }
 }

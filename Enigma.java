@@ -25,20 +25,7 @@ public class Enigma
                 resultado = mecanismo.getNumero() * numero;
             }
             if(mecanismo instanceof MecanismoOffset){
-                int mult = 0;
-                int aux = 0;
-                int aux2 = mecanismo.getNumero();
-                resultado = 0;
-                while(numero > 10){
-                    aux = numero % 10;
-                    aux += aux2;
-                    if(aux >= 10)
-                        aux = aux % 10;
-                    resultado += aux*(Math.pow(10,mult));
-                    numero = numero / 10;
-                    mult ++;
-                }
-                resultado += numero*(Math.pow(10,mult));
+                resultado = mecanismo.codifica(numero);
             }
         }
         return resultado;
@@ -54,20 +41,7 @@ public class Enigma
                 resultado = numero / mecanismo.getNumero();
             }
             if(mecanismo instanceof MecanismoOffset){
-                int mult = 0;
-                int aux = 0;
-                int aux2 = mecanismo.getNumero();
-                resultado = 0;
-                while(numero > 10){
-                    aux = (numero % 10) + 10;
-                    aux -= aux2;
-                    if(aux >= 10)
-                        aux = aux % 10;
-                    resultado += aux*(Math.pow(10,mult));
-                    numero = numero / 10;
-                    mult ++;
-                }
-                resultado += numero*(Math.pow(10,mult));
+                resultado = mecanismo.decodifica(numero);
             }
         }
         if(resultado <= 10)
