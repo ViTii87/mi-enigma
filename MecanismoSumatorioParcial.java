@@ -33,7 +33,7 @@ public class MecanismoSumatorioParcial extends Mecanismo
         int aux = numero;
         int resultado = 0;
         while(aux >= getNumero()){
-            resultado = resultado + aux;
+            resultado += aux;
             aux--;
         }
         return resultado;
