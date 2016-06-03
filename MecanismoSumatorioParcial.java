@@ -5,29 +5,52 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class MecanismoSumatorioParcial
+public class MecanismoSumatorioParcial extends Mecanismo
 {
     // instance variables - replace the example below with your own
-    private int x;
+    private int num;
 
     /**
      * Constructor for objects of class MecanismoSumatorioParcial
      */
-    public MecanismoSumatorioParcial()
+    public MecanismoSumatorioParcial(int numero)
     {
-        // initialise instance variables
-        x = 0;
+        super(numero);
+        num = numero;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Devuelve el numero almacenado en el mecanismo
      */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    public int getNumero(){
+        return num;
+    }
+
+    /**
+     * Metodo que realiza la codificacion de esta maquina
+     */
+    public int codifica(int numero){
+        int i = 1;
+        int resultado = numero;
+        while(i <= getNumero()){
+            resultado = resultado + (numero - i);
+            i++;
+        }
+        return resultado;
+    }
+
+    /**
+     * Metodo que realiza la decodificacion de esta maquina
+     */
+    public int decodifica(int numero){
+        int i = 0;
+        int resultado = numero;
+        int aux = 0;
+        while(i <= getNumero()){
+            aux = aux + i;
+            i++;
+        }
+        resultado = (numero + aux) / i;
+        return resultado;
     }
 }

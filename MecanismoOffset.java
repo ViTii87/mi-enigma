@@ -49,7 +49,7 @@ public class MecanismoOffset extends Mecanismo
     }
 
     /**
-     * 
+     * Metodo que realiza la decodificacion de esta maquina
      */
     public int decodifica(int numero){
         int resultado = -1;

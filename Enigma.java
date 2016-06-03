@@ -27,6 +27,9 @@ public class Enigma
             if(mecanismo instanceof MecanismoOffset){
                 resultado = mecanismo.codifica(numero);
             }
+            if(mecanismo instanceof MecanismoSumatorioParcial){
+                resultado = mecanismo.codifica(numero);
+            }
         }
         return resultado;
     }
@@ -41,6 +44,9 @@ public class Enigma
                 resultado = numero / mecanismo.getNumero();
             }
             if(mecanismo instanceof MecanismoOffset){
+                resultado = mecanismo.decodifica(numero);
+            }
+            if(mecanismo instanceof MecanismoSumatorioParcial){
                 resultado = mecanismo.decodifica(numero);
             }
         }
