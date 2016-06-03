@@ -22,7 +22,7 @@ public class Enigma
         int resultado = -1;
         if(numero > 10){
             if( mecanismo instanceof MecanismoMultiplicacionPrimo) {
-                resultado = mecanismo.getNumero() * numero;
+                resultado = mecanismo.codifica(numero);
             }
             if(mecanismo instanceof MecanismoOffset){
                 resultado = mecanismo.codifica(numero);
@@ -41,7 +41,7 @@ public class Enigma
         int resultado = -1;
         if(numero > 10){
             if( mecanismo instanceof MecanismoMultiplicacionPrimo) {
-                resultado = numero / mecanismo.getNumero();
+                resultado = mecanismo.decodifica(numero);
             }
             if(mecanismo instanceof MecanismoOffset){
                 resultado = mecanismo.decodifica(numero);
