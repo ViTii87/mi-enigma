@@ -74,11 +74,11 @@ public class EnigmaTest
         Enigma enigma = new Enigma();
         Mecanismo mecanismo03 = new MecanismoSumatorioParcial(7);
                        
-        assertEquals(164,   enigma.encripta(mecanismo03, 24));
+        assertEquals(279,   enigma.encripta(mecanismo03, 24));
         assertEquals(84,    enigma.encripta(mecanismo03, 14));
         assertEquals(-1,    enigma.encripta(mecanismo03, 10));        
         assertEquals(14,    enigma.desencripta(mecanismo03, 84));
-        assertEquals(24,    enigma.desencripta(mecanismo03, 164));
+        assertEquals(24,    enigma.desencripta(mecanismo03, 279));
         assertEquals(-1,    enigma.desencripta(mecanismo03, 46));
     }
     
@@ -104,11 +104,11 @@ public class EnigmaTest
         assertEquals(9943,  enigma.desencripta(mecanismo02, 9165));
         assertEquals(-1,    enigma.desencripta(mecanismo02, 12));    
                        
-        assertEquals(2372,   enigma.encripta(mecanismo03, 300));
+        assertEquals(279,   enigma.encripta(mecanismo03, 24));
         assertEquals(84,    enigma.encripta(mecanismo03, 14));
         assertEquals(-1,    enigma.encripta(mecanismo03, 10));        
         assertEquals(14,    enigma.desencripta(mecanismo03, 84));
-        assertEquals(300,    enigma.desencripta(mecanismo03, 2372));
+        assertEquals(24,    enigma.desencripta(mecanismo03, 279));
         assertEquals(-1,    enigma.desencripta(mecanismo03, 46));
-    }    
+    }   
 }

@@ -30,11 +30,11 @@ public class MecanismoSumatorioParcial extends Mecanismo
      * Metodo que realiza la codificacion de esta maquina
      */
     public int codifica(int numero){
-        int i = 1;
-        int resultado = numero;
-        while(i <= getNumero()){
-            resultado = resultado + (numero - i);
-            i++;
+        int aux = numero;
+        int resultado = 0;
+        while(aux >= getNumero()){
+            resultado = resultado + aux;
+            aux--;
         }
         return resultado;
     }
@@ -43,14 +43,12 @@ public class MecanismoSumatorioParcial extends Mecanismo
      * Metodo que realiza la decodificacion de esta maquina
      */
     public int decodifica(int numero){
-        int i = 0;
-        int resultado = 0;
-        int aux = 0;
-        while(i <= getNumero()){
-            aux = aux + i;
-            i++;
+        int aux = getNumero();
+        int aux2 = numero;
+        while(aux2 > aux){
+           aux2 -= aux;
+           aux ++;
         }
-        resultado = (numero + aux) / i;
-        return resultado;
+        return aux2;
     }
 }
