@@ -44,7 +44,7 @@ public class MecanismoSumatorioParcial extends Mecanismo
      */
     public int decodifica(int numero){
         int i = 0;
-        int resultado = numero;
+        int resultado = 0;
         int aux = 0;
         while(i <= getNumero()){
             aux = aux + i;
